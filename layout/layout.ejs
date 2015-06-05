@@ -1,0 +1,44 @@
+<%- partial('_partial/head') %>
+<% if (is_home() || is_category() || is_archive() || is_tag() || is_current("about/index.html") ){%>
+<body style="background:#f5f8f9">
+<% } else { %>
+<body style="background:#fff">
+<% } %>
+
+  <div id="container">
+
+      <% if (is_home() || is_category() || is_archive() || is_tag() || is_current("about/index.html") ){%>
+
+        <%- partial('_partial/header',{index:false}) %>
+        <div class="outer">
+
+        <%- partial('_partial/profile', null, {cache: !config.relative_link}) %>
+
+        <section id="main"><%- body %></section>
+
+        <% if (theme.sidebar && theme.sidebar !== 'bottom'){ %>
+          <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
+        <% } %>
+
+      <% } else { %>
+
+        <%- partial('_partial/header',{index:true}) %>
+        <div class="outer">
+
+        <section id="post-main"><%- body %></section>
+        <% if (theme.sidebar && theme.sidebar !== 'bottom'){ %>
+            <aside id="sidebar" class="print-invisible"<% if (theme.sidebar === 'bottom'){ %> class="outer"<% } %>>
+            <div id="toTop" class="fa fa-chevron-up"></div>
+          </aside>
+        <% } %>
+
+      <% } %>
+
+
+
+    </div>
+    <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
+    <%- partial('_partial/after-footer') %>
+  </div>
+</body>
+</html>

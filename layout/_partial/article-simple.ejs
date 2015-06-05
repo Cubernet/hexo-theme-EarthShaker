@@ -1,0 +1,9 @@
+<article id="<%= post.layout %>-<%= post.slug %>" class="article-simple" itemscope itemprop="blogPost">
+  <div class="article-simple-inner">  
+    <% if (post.link || post.title){ %>
+      <header class="article-simple-header">
+        <a class="article-simple-title" href="<%- url_for(post.path) %>"><span class="article-simple-span"><%= date(post.date, 'MM-DD') %></span><%= post.title %></a>
+      </header>
+    <% } %>
+  </div>
+</article>
