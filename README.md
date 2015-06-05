@@ -49,11 +49,13 @@ fancybox: true
 # Sidebar
 sidebar: right
 widgets:
+- player
 - recent_posts
 - category
 - tag
 - tagcloud
 - archive
+- links
 
 # Contacts
 contacts:
@@ -157,7 +159,7 @@ EarthShaker provides access statistics of your site and every article by using [
 ### Requirements
 
 - [Grunt] 0.4+
-- Hexo 2.4+
+- [Hexo] 2.4+
 
 ### Grunt tasks
 
